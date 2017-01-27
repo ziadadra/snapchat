@@ -25,8 +25,22 @@ class SighnInViewController: UIViewController {
             if error != nil {
                 print ("Hey we have error:\(error)")
                 
+                FIRAuth.auth()?.createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
+                    
+                    print("we are  creating user ")
+                    if error != nil {
+                        print ("Hey we have error:\(error)")
+                    } else {
+                            print("User created ")
+                        print ("Signed in Succesfully")
+                        self.performSegue(withIdentifier: "signinsegue", sender: nil)
+                        }
+                    
+                })
+                
             } else {
                 print ("Signed in Succesfully")
+                self.performSegue(withIdentifier: "signinsegue", sender: nil)
                 
             }
         })
