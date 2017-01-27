@@ -78,7 +78,7 @@
         <!--Snaps View Controller-->
         <scene sceneID="23a-dy-sfJ">
             <objects>
-                <viewController id="bvP-7t-JPa" customClass="SnapsViewController" customModule="snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bvP-7t-JPa" customClass="SnapsViewController" customModule="snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TdI-t5-94h"/>
                         <viewControllerLayoutGuide type="bottom" id="U66-XT-SqQ"/>
@@ -86,7 +86,19 @@
                     <view key="view" contentMode="scaleToFill" id="GN5-Fg-snB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7fW-qj-yfG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U66-XT-SqQ" firstAttribute="top" secondItem="7fW-qj-yfG" secondAttribute="bottom" id="7eu-Hu-Ark"/>
+                            <constraint firstAttribute="trailing" secondItem="7fW-qj-yfG" secondAttribute="trailing" id="bDc-19-JIB"/>
+                            <constraint firstItem="7fW-qj-yfG" firstAttribute="leading" secondItem="GN5-Fg-snB" secondAttribute="leading" id="gfv-C7-IHm"/>
+                            <constraint firstItem="7fW-qj-yfG" firstAttribute="top" secondItem="TdI-t5-94h" secondAttribute="bottom" id="yLN-sS-fUE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="01B-uV-bHW">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="h0T-at-uEb">
@@ -100,6 +112,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="7fW-qj-yfG" id="yIm-Wp-ksd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWM-KO-nAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

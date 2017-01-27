@@ -17,6 +17,8 @@ class SighnInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //     FIRDatabase.database().reference().child("Hello").setValue("I m Cool")
+        
     }
     
     @IBAction func turnupTapped(_ sender: Any) {
@@ -31,10 +33,20 @@ class SighnInViewController: UIViewController {
                     if error != nil {
                         print ("Hey we have error:\(error)")
                     } else {
-                            print("User created ")
+                        //  print("User created ")
+                        
                         print ("Signed in Succesfully")
+                        FIRDatabase.database().reference().child("users").child(user!.uid).child("Email").setValue(user!.email!)
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         self.performSegue(withIdentifier: "signinsegue", sender: nil)
-                        }
+                    }
                     
                 })
                 
