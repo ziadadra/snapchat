@@ -19,6 +19,7 @@
 		998C5AF41E37E1E1004BCC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 998C5AF31E37E1E1004BCC1E /* Assets.xcassets */; };
 		998C5AF71E37E1E1004BCC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998C5AF51E37E1E1004BCC1E /* LaunchScreen.storyboard */; };
 		998C5AFF1E37E536004BCC1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 998C5AFE1E37E536004BCC1E /* GoogleService-Info.plist */; };
+		99C620391E3CAE2C002512E8 /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C620381E3CAE2C002512E8 /* ViewSnapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		998C5AF61E37E1E1004BCC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		998C5AF81E37E1E1004BCC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		998C5AFE1E37E536004BCC1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99C620381E3CAE2C002512E8 /* ViewSnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
 		E7109772513381842C7B58AD /* Pods-snapchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapchat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snapchat/Pods-snapchat.debug.xcconfig"; sourceTree = "<group>"; };
 		FE6C16F868D49B5C47E9F159 /* Pods-snapchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapchat.release.xcconfig"; path = "Pods/Target Support Files/Pods-snapchat/Pods-snapchat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +62,7 @@
 				997BAC001E3A722400347C34 /* SnapsViewController.swift */,
 				997BAC021E3A764600347C34 /* PictureViewController.swift */,
 				997BAC041E3B467F00347C34 /* SelectuserViewController.swift */,
+				99C620381E3CAE2C002512E8 /* ViewSnapViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				997BAC051E3B467F00347C34 /* SelectuserViewController.swift in Sources */,
 				998C5AEF1E37E1E1004BCC1E /* SignInViewController.swift in Sources */,
 				997BAC071E3B95F300347C34 /* User.swift in Sources */,
+				99C620391E3CAE2C002512E8 /* ViewSnapViewController.swift in Sources */,
 				997BAC031E3A764600347C34 /* PictureViewController.swift in Sources */,
 				997BAC0B1E3BC7D300347C34 /* Snap.swift in Sources */,
 				998C5AED1E37E1E1004BCC1E /* AppDelegate.swift in Sources */,

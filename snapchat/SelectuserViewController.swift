@@ -17,6 +17,7 @@ class SelectuserViewController: UIViewController, UITableViewDataSource, UITable
     var users : [User] = []
     var imageURL = ""
     var descrip = ""
+    var uuid = ""
     
     
     
@@ -70,10 +71,11 @@ class SelectuserViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = users[indexPath.row]
         
-        let snap = ["From":user.email,"Description":descrip,"ImageUrl":imageURL]
+        let snap = ["From":FIRAuth.auth()!.currentUser!.email,"Description":descrip,"ImageUrl":imageURL,"uuid":uuid]
         
         FIRDatabase.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
         
+        navigationController!.popToRootViewController(animated: true)
         
         
         

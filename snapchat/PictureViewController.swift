@@ -20,14 +20,16 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var imagePicker = UIImagePickerController()
     
+    var uuid = NSUUID().uuidString
     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         // Do any additional setup after loading the view.
        imagePicker.delegate = self
-        
+       nextButton.isEnabled = false
        
         
         
@@ -38,6 +40,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         imageView.image = image
         imageView.backgroundColor = UIColor.clear
+        nextButton.isEnabled = true
+        
         imagePicker.dismiss(animated: true, completion: nil)
     }
 
@@ -47,8 +51,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
-       // imagePicker.sourceType = .camera
-        imagePicker.sourceType = .savedPhotosAlbum
+        imagePicker.sourceType = .camera
+     //   imagePicker.sourceType = .savedPhotosAlbum
         imagePicker.allowsEditing = false
         
         present(imagePicker, animated: true, completion: nil)
@@ -66,7 +70,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
         
         
-        imagesFolder.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil, completion: {(metadata, error) in
+        imagesFolder.child("\(uuid).jpg").put(imageData, metadata: nil, completion: {(metadata, error) in
             print ("we tried to upload")
             if error != nil {
                 print ("We had an error:\(error)")
@@ -85,6 +89,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         nextVC.imageURL = sender as! String
         
         nextVC.descrip = descriptionTextField.text!
+        nextVC.uuid = uuid
         
         
         
